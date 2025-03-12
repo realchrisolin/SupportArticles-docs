@@ -144,6 +144,9 @@ To resolve this problem, first determine which scenario is the cause of the prob
 
     ```
 
+>[!NOTE]
+> Changes to the default dynamic TCP/IP port ranges in Windows Server 2008 and later negotiate RPC traffic on other ports in addition to port 135. If enterprise-grade firewalls are implicitly blocking outbound traffic on client devices to ports in [the default port range](https://learn.microsoft.com/en-us/troubleshoot/windows-server/networking/default-dynamic-port-range-tcpip-chang) on domain controllers, similar ACCESS_DENIED errors will be returned. This can be difficult to identify because RPC traffic can be silently blocked by the firewall at the application layer.
+
 If the date and time of event 5722 and the decoded date and time do not match, the problem computer's account password may not match the password that is on the domain controller. This issue can occur under either of the following circumstances:  
 
 - An administrator resets a computer account by using Active Directory Users and Computers or another tool such as Netdom.exe.  
